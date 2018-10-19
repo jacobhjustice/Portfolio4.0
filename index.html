@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <link rel = "stylesheet" href= "index.css"></link>
+        <script src = "index.js"></script>
+        <script type = "text/template" id = "About">
+            <div class = "header">Hello! My name is Jacob!</div>
+            <img id = "portrait" src = "img.jpg" />
+            <div class = "text">
+                I am a senior in software engineering at Auburn University with a minor in mathematics. I have worked as a web developer in professional environments through both internship and co-op. I like to be involved on campus, having previously been a member of the Auburn University Marching Band, TigerDev Video Game Development Club, and Wesley Foundation. Today, I am an officer in my fraternity, Beta Upsilon Chi, a part of a college ministry, and lead my own Bible Study. Check out some of my previous work around my website, and if you would like to reach out to me, head to the contact tab. If you want to get an idea of what I do for fun, be sure to check out the personal tab, too!
+            </div>
+        </script>
+        <script type = "text/template" id = "Experience">
+            <div class = "header">Work Experience</div>
+            <table id = "experienceTable">
+                <tr id = "UDA">
+                    <td class = "workIcon"><img src = "UDA.jpg" /></td>
+                    <td>
+                        <div class = "jobTitle">Software Engineer Co-op</div>
+                        <div class = "employmentDates">Summer 2016, Spring 2017, Fall 2017</div>
+                        <div class = "projects">Click to view job description...</div>
+                    </td>
+                </tr>
+                <tr id = "Workiva">
+                        <td class = "workIcon"><img src = "Workiva.png" /></td>
+                        <td>
+                            <div class = "jobTitle">Software Development Intern</div>
+                            <div class = "employmentDates">Summer 2018, Spring 2019 (Part time)</div>
+                            <div class = "projects">Click to view job description...</div>
+                        </td>
+                    </tr>
+            </table>
+        </script>
+        <script type = "text/template" id = "Projects">
+        </script>
+        <script type = "text/template" id = "Personal">
+        </script>
+        <script type = "text/template" id = "Contact">
+        </script>
+        <div id = "content">
+            <div id = "navBar">
+                <div class = "item" onclick="About()">About</div>
+                <div class = "item" onclick="Experience()">Experience</div>
+                <div class = "item" onclick="Projects()">Projects</div>
+                <div class = "item" onclick="Personal()">Personal</div>
+                <div class = "item" onclick="Contact()">Contact</div>
+            </div>
+            <div id = "fillable">
+
+            </div>
+        </div>
+    </body>
+</html>
