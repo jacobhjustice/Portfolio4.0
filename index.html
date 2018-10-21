@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <title>Jacob Justice</title>
     </head>
     <body>
+        
         <link rel = "stylesheet" href= "index.css"></link>
         <script src = "index.js"></script>
         <script type = "text/template" id = "About">
@@ -16,7 +17,7 @@
         <script type = "text/template" id = "Experience">
             <div class = "header">Work Experience</div>
             <table id = "experienceTable">
-                <tr id = "UDA">
+                <tr id = "UDA" onclick = "onClickJob(UDA)">
                     <td class = "workIcon"><img src = "UDA.jpg" /></td>
                     <td>
                         <div class = "jobTitle">Software Engineer Co-op</div>
@@ -39,6 +40,15 @@
         <script type = "text/template" id = "Personal">
         </script>
         <script type = "text/template" id = "Contact">
+            <form id = "contactForm">
+                <label for = "email">Email</label>
+                <input type = "text" id = "email" />
+                <label for = "phone">Phone #</label>
+                <input type = "text" id = "phone" />
+                <label for = "name">Name</label>
+                <input type = "text" id = "name" />
+                <textarea placeholder = "What would you like to inquire about?" id = "message"></textarea>
+            </form>
         </script>
         <div id = "content">
             <div id = "navBar">
