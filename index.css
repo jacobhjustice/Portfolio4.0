@@ -6,7 +6,7 @@ body {
 }
 
 #popup {
-    background-color: white;
+    background-color: #dedede;
     top: -1000px;
     width: 30px;
     height: 30px;
@@ -14,16 +14,32 @@ body {
     position: absolute;
     transition: top 1250ms ease,
                 width 1000ms ease,
-                height 1000ms ease;
+                height 1100ms ease;
     border-radius: 10px;
     overflow: hidden;
 }
 
 #popup #wrapper {
     width: 100%;
-    height: 100%;
+    height: 90%;
     box-sizing: border-box;
     padding: 25px;
+}
+
+#popup #closeBtn {
+    width: 16px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+    background-image: url('close_disabled.png');
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    visibility: hidden;
+}
+
+#popup #closeBtn:hover {
+    background-image: url('close.png');
 }
 
 #content {

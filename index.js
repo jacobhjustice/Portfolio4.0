@@ -52,33 +52,49 @@ function onClickJob(elem){
 }
 
 Popup = {
-
+    Status: {
+        INACTIVE: 0,
+        ACTIVE: 1,
+        PENDING: 2
+    },
+    currentStatus: 0
 }
 
 function togglePopup(innerHTML) {
-    // Get Popup element, if it exists
     var elem = document.getElementById("popup");
+    if(Popup.currentStatus == Popup.Status.PENDING) {
+        return; 
+    }
 
-    // If elem exists, popup is currently active
+    // If elem exists, popup is currently active, so begin close animation
     if(elem != null) { 
+        Popup.currentStatus = Popup.Status.PENDING;
         elem.style.height = "30px"
         elem.style.width = "30px";
         elem.firstChild.innerHTML = "";
+        document.getElementById("closeBtn").remove();
         setTimeout(function(){
             elem.style.top = "-1000px";
             setTimeout(function(){
                 elem.remove();
+                Popup.currentStatus = Popup.Status.INACTIVE;
             }, 1250);
         }, 1500);
         
-    }
-    else {
+    } else {
+        Popup.currentStatus = Popup.Status.PENDING;
         elem = document.createElement("div");
         elem.id = "popup";
         wrapper = document.createElement("div");
-
         wrapper.id = "wrapper";
-        elem.appendChild(wrapper)
+        elem.appendChild(wrapper);
+
+        close = document.createElement("div");
+        close.id = "closeBtn";
+        close.onclick = function() {
+            togglePopup();
+        };
+        elem.appendChild(close);
         document.body.appendChild(elem);
         setTimeout(function(){
             // SHOW
@@ -89,11 +105,13 @@ function togglePopup(innerHTML) {
             // scroll down
             elem.style.top = "20%";
             setTimeout(function(){
-                elem.style.height = "400px"
+                elem.style.height = "400px";
                 elem.style.width = "700px";
                 setTimeout(function(){
                     wrapper.innerHTML = innerHTML;
-                }, 1000)
+                    close.style.visibility = "visible";
+                    Popup.currentStatus = Popup.Status.ACTIVE;
+                 }, 1000)
             }, 1750);
         }, 300)
         
