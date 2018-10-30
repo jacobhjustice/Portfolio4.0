@@ -25,7 +25,7 @@
                         <div class = "projects">Click to view job description...</div>
                     </td>
                 </tr>
-                <tr id = "Workiva">
+                <tr id = "Workiva" onclick = "onClickJob(Workiva)">
                         <td class = "workIcon"><img src = "Workiva.png" /></td>
                         <td>
                             <div class = "jobTitle">Software Development Intern</div>
@@ -38,6 +38,46 @@
         <script type = "text/template" id = "Projects">
         </script>
         <script type = "text/template" id = "Personal">
+            <div class = "header">Hobbies & Stuff</div>
+            <div id = "hobbyTable">
+                <div class = "row" data-hidden = "true" id = "Henway" onclick = "onClickHobby(Henway)">
+                    <div class = "cell first">
+                        <div>The latest short film from my Youtube channel: "Styrofoam Pete and the Showdown at High Noon"</div>
+                    </div>
+                    <div class = "cell dropdownCell first">
+                        <img />
+                    </div>
+                </div>
+                <div class = "row feature" id = "Henway-extra" style = "height: 375px;">
+                    <div class = "cell">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/igJ7evE79Ak" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </br>
+                        <a href = "https://www.youtube.com/channel/UCc1N_oYK0nL69fadgvIjguw">Watch more videos...</a>
+                    </div>
+                </div>
+
+                <div class = "row" data-hidden = "true" id = "Bible" onclick = "onClickHobby(Bible)">
+                    <div class = "cell">
+                        <div>Notes from Bible Studies</div>
+                    </div>
+                    <div class = "cell dropdownCell">
+                        <img src = "Down.png" />
+                    </div>
+                </div>
+                <div class = "row feature" id = "Henway-extra" style = "height: 375px;">
+                    <div class = "cell">
+                        <div class="table">
+                            <div class = "row">
+                                <div class = "cell">
+                                    Click any journal to read notes on the book/topic from my weekly Bible study.
+                                </div>
+                            </div>
+                            <div class = "row"><div class = "cell" id = "BibleCell"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </script>
         <script type = "text/template" id = "Contact">
             <form id = "contactForm">
