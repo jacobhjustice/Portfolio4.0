@@ -30,6 +30,50 @@ function onClickHobby(elem) {
     elem.dataset.hidden = isHidden != "true"
 }
 
+function onClickProject(elem){
+    var id = elem.id;
+    if(id == "Sudoku") {
+        var win = window.open(window.location.href + "/Sudoku_Solver")
+        win.focus();
+    }
+}
+
+function onClickContact() {
+    var xhr = new XMLHttpRequest();
+    var HTMLForm = document.getElementById("contactForm");
+    var form = new FormData(HTMLForm);
+    xhr.addEventListener("load", function(e){
+        console.log(e);
+    });
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var els = HTMLForm.getElementsByClassName("formInput")
+            for(var i = 0; i < els.length; i++) {
+                els[i].value = "";
+            }
+        }
+      };
+
+    xhr.open("POST", "contact.php");
+    xhr.send(form);
+
+}
+
+function onClickIcon(elem) {
+    var id = elem.id;
+    if(id == "Git") {
+        var win = window.open("https://github.com/jacobhjustice", '_blank');
+        win.focus();
+    } else if(id == "Insta") {
+        var win = window.open("https://www.instagram.com/boy_justice_superhero/", '_blank');
+        win.focus();
+    } else if(id == "Linked") {
+        var win = window.open("https://www.linkedin.com/in/jacob-justice-a32017125/", '_blank');
+        win.focus();
+    }
+}
+
 function onClickJob(elem) {
     var id = elem.id;
     if(id == "UDA") {
@@ -113,7 +157,7 @@ function togglePopup(innerHTML, heightCSS) {
             setTimeout(function(){
                 elem.remove();
                 Popup.currentStatus = Popup.Status.INACTIVE;
-            }, 1250);
+            }, 500);
         }, 1500);
         
     } else {
@@ -132,16 +176,11 @@ function togglePopup(innerHTML, heightCSS) {
         elem.appendChild(close);
         document.body.appendChild(elem);
         setTimeout(function(){
-            // SHOW
-            // update html
 
-            // fade background
-
-            // scroll down
             elem.style.top = "20%";
             setTimeout(function(){
-                elem.style.height = heightCSS ? heightCSS : "400px";
-                elem.style.width = "700px";
+                elem.style.height = heightCSS ? heightCSS : "440px";
+                elem.style.width = "800px";
                 setTimeout(function(){
                     wrapper.innerHTML = innerHTML;
                     close.style.visibility = "visible";
@@ -150,5 +189,11 @@ function togglePopup(innerHTML, heightCSS) {
             }, 1750);
         }, 300)
         
+    }
+}
+
+function closePopup(){
+    if(Popup.currentStatus == Popup.Status.ACTIVE) {
+        togglePopup();
     }
 }

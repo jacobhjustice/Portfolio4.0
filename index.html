@@ -36,6 +36,15 @@
             </table>
         </script>
         <script type = "text/template" id = "Projects">
+            <div class = "header">Personal Projects</div>
+            <table id = "experienceTable">
+                <tr id = "Sudoku" onclick = "onClickProject(Sudoku)">
+                    <td class = "workIcon"><img src = "sudoku.png" /></td>
+                    <td>
+                        <div class = "jobTitle">Automatic Sudoku Solver</div>
+                    </td>
+                </tr>
+            </table>
         </script>
         <script type = "text/template" id = "Personal">
             <div class = "header">Hobbies & Stuff</div>
@@ -80,17 +89,22 @@
             </div>
         </script>
         <script type = "text/template" id = "Contact">
-            <form id = "contactForm">
-                <label for = "email">Email</label>
-                <input type = "text" id = "email" />
-                <label for = "phone">Phone #</label>
-                <input type = "text" id = "phone" />
-                <label for = "name">Name</label>
-                <input type = "text" id = "name" />
-                <textarea placeholder = "What would you like to inquire about?" id = "message"></textarea>
+            
+            <div class = "header">Get in Touch!</div>
+            </br>
+            <form id = "contactForm" action="contact.php" method="post">
+                <div style = "margin-left:0;"><label for = "email" ><span>Email</span> <input class = "formInput"  name = "email" type = "text" id = "email" /></label></div>
+                
+                <div><label for = "phone">Phone #<input class = "formInput"  name = "phone" type = "text" id = "phone" /></label></div>
+                
+                <div><label for = "name">Name<input class = "formInput"  name = "name" type = "text" id = "name" /></label></div>
+                
+                <textarea name = "message" class = "formInput" placeholder = "What would you like to inquire about?" id = "message"></textarea>
             </form>
+            <div id = "contactBtn" onclick="onClickContact()">Send</div>
+            
         </script>
-        <div id = "content">
+        <div id = "content" onclick = "closePopup()">
             <div id = "navBar">
                 <div class = "item" onclick="About()">About</div>
                 <div class = "item" onclick="Experience()">Experience</div>
@@ -101,6 +115,12 @@
             <div id = "fillable">
 
             </div>
+            <div id = "iconBar">
+                <div class="gitIcon" id = "Git" onclick = "onClickIcon(Git)"></div>
+                <div class="instaIcon" id = "Insta" onclick = "onClickIcon(Insta)"></div>
+                <div class="linkedIcon" id = "Linked" onclick = "onClickIcon(Linked)"></div>
+            </div>
         </div>
+        <script>About();</script>
     </body>
 </html>
